@@ -1,0 +1,30 @@
+# Keep the Docker build context small and free of secrets/data.
+.git
+.gitignore
+.github
+.venv
+venv
+__pycache__
+*.py[cod]
+*.egg-info
+build
+dist
+.mypy_cache
+.pytest_cache
+.ruff_cache
+.coverage
+htmlcov
+coverage.xml
+
+# Data and artifacts are mounted at runtime, never baked into the image.
+data
+artifacts
+reports
+notebooks
+
+# Local/secret files
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+*.log
