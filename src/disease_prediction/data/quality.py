@@ -155,3 +155,4 @@ def _clean(value: Any) -> float | None:
 
 def _fmt(value: float | None) -> str:
     return "—" if value is None else f"{value:.4g}"
+#
