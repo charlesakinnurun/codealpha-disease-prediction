@@ -1,0 +1,29 @@
+{
+  "task": "diabetes",
+  "champion": "svm",
+  "model_version": "0.1.0.20261012163158",
+  "threshold": 0.0556,
+  "n_test": 104,
+  "metrics": {
+    "threshold": 0.0556,
+    "n": 104,
+    "accuracy": 0.9711538461538461,
+    "precision": 0.9552238805970149,
+    "recall": 1.0,
+    "sensitivity": 1.0,
+    "specificity": 0.925,
+    "f1": 0.9770992366412213,
+    "roc_auc": 0.98828125,
+    "pr_auc": 0.9908163759225568,
+    "brier": 0.022043871379563453,
+    "tn": 37,
+    "fp": 3,
+    "fn": 0,
+    "tp": 64,
+    "positive_rate": 0.6153846153846154,
+    "roc_auc_ci95": [
+      0.9584352233132721,
+      1.0
+    ]
+  }
+}
