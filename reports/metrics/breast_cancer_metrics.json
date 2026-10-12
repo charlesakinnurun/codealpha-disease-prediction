@@ -1,0 +1,291 @@
+{
+  "task": "breast_cancer",
+  "champion": "svm",
+  "selection_metric": "roc_auc",
+  "rationale": "Selected `svm` by highest validation roc_auc. Selection used validation data only; the test set was not consulted. Runner-up was `logistic_regression` (\u0394roc_auc = 0.0007); the margin should be read alongside cross-validation variability. Dummy baseline roc_auc = 0.5000; champion = 0.9971.",
+  "split_sizes": {
+    "train": 341,
+    "validation": 114,
+    "test": 114
+  },
+  "random_seed": 42,
+  "models": {
+    "dummy": {
+      "display_name": "Dummy (prior) baseline",
+      "best_params": {},
+      "cv_score": null,
+      "cv_std": null,
+      "threshold": 0.5,
+      "calibrated": false,
+      "validation_metrics": {
+        "threshold": 0.5,
+        "n": 114,
+        "accuracy": 0.6228070175438597,
+        "precision": 0.0,
+        "recall": 0.0,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "f1": 0.0,
+        "roc_auc": 0.5,
+        "pr_auc": 0.37855055027690915,
+        "brier": 0.23494108418852877,
+        "tn": 71,
+        "fp": 0,
+        "fn": 43,
+        "tp": 0,
+        "positive_rate": 0.37719298245614036
+      },
+      "test_metrics": {
+        "threshold": 0.5,
+        "n": 114,
+        "accuracy": 0.631578947368421,
+        "precision": 0.0,
+        "recall": 0.0,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "f1": 0.0,
+        "roc_auc": 0.5,
+        "pr_auc": 0.3914670056331341,
+        "brier": 0.23270308449721838,
+        "tn": 72,
+        "fp": 0,
+        "fn": 42,
+        "tp": 0,
+        "positive_rate": 0.3684210526315789,
+        "roc_auc_ci95": [
+          0.5,
+          0.5
+        ],
+        "pr_auc_ci95": [
+          0.2701132151790506,
+          0.5260560999806443
+        ]
+      }
+    },
+    "logistic_regression": {
+      "display_name": "Logistic Regression",
+      "best_params": {
+        "model__C": 0.3
+      },
+      "cv_score": 0.9938935173353778,
+      "cv_std": 0.008198357104254213,
+      "threshold": 0.6337,
+      "calibrated": false,
+      "validation_metrics": {
+        "threshold": 0.6337,
+        "n": 114,
+        "accuracy": 0.9824561403508771,
+        "precision": 0.9767441860465116,
+        "recall": 0.9767441860465116,
+        "sensitivity": 0.9767441860465116,
+        "specificity": 0.9859154929577465,
+        "f1": 0.9767441860465116,
+        "roc_auc": 0.9963969865705863,
+        "pr_auc": 0.9952627045650301,
+        "brier": 0.0255164410764849,
+        "tn": 70,
+        "fp": 1,
+        "fn": 1,
+        "tp": 42,
+        "positive_rate": 0.37719298245614036
+      },
+      "test_metrics": {
+        "threshold": 0.6337,
+        "n": 114,
+        "accuracy": 0.9824561403508771,
+        "precision": 1.0,
+        "recall": 0.9523809523809523,
+        "sensitivity": 0.9523809523809523,
+        "specificity": 1.0,
+        "f1": 0.975609756097561,
+        "roc_auc": 0.9973544973544973,
+        "pr_auc": 0.9960317460317459,
+        "brier": 0.022306380907130663,
+        "tn": 72,
+        "fp": 0,
+        "fn": 2,
+        "tp": 40,
+        "positive_rate": 0.3684210526315789,
+        "roc_auc_ci95": [
+          0.9902629764258388,
+          1.0
+        ],
+        "pr_auc_ci95": [
+          0.9849388650000009,
+          1.0
+        ]
+      }
+    },
+    "svm": {
+      "display_name": "Support Vector Machine (RBF)",
+      "best_params": {
+        "model__estimator__gamma": 0.01,
+        "model__estimator__C": 3.0
+      },
+      "cv_score": 0.994076667518528,
+      "cv_std": 0.008729452586102813,
+      "threshold": 0.2646,
+      "calibrated": true,
+      "validation_metrics": {
+        "threshold": 0.2646,
+        "n": 114,
+        "accuracy": 0.9736842105263158,
+        "precision": 0.9545454545454546,
+        "recall": 0.9767441860465116,
+        "sensitivity": 0.9767441860465116,
+        "specificity": 0.971830985915493,
+        "f1": 0.9655172413793104,
+        "roc_auc": 0.9970520799213888,
+        "pr_auc": 0.9958111963011274,
+        "brier": 0.01592952164573733,
+        "tn": 69,
+        "fp": 2,
+        "fn": 1,
+        "tp": 42,
+        "positive_rate": 0.37719298245614036
+      },
+      "test_metrics": {
+        "threshold": 0.2646,
+        "n": 114,
+        "accuracy": 0.9824561403508771,
+        "precision": 0.9761904761904762,
+        "recall": 0.9761904761904762,
+        "sensitivity": 0.9761904761904762,
+        "specificity": 0.9861111111111112,
+        "f1": 0.9761904761904762,
+        "roc_auc": 0.9966931216931217,
+        "pr_auc": 0.9954212454212453,
+        "brier": 0.01477584336290129,
+        "tn": 71,
+        "fp": 1,
+        "fn": 1,
+        "tp": 41,
+        "positive_rate": 0.3684210526315789,
+        "roc_auc_ci95": [
+          0.9871794871794872,
+          1.0
+        ],
+        "pr_auc_ci95": [
+          0.981802007829647,
+          1.0
+        ]
+      }
+    },
+    "random_forest": {
+      "display_name": "Random Forest",
+      "best_params": {
+        "model__n_estimators": 200,
+        "model__min_samples_leaf": 1,
+        "model__max_features": 0.5,
+        "model__max_depth": null
+      },
+      "cv_score": 0.9891351903910042,
+      "cv_std": 0.012174916481647338,
+      "threshold": 0.625,
+      "calibrated": false,
+      "validation_metrics": {
+        "threshold": 0.625,
+        "n": 114,
+        "accuracy": 0.9736842105263158,
+        "precision": 0.9761904761904762,
+        "recall": 0.9534883720930233,
+        "sensitivity": 0.9534883720930233,
+        "specificity": 0.9859154929577465,
+        "f1": 0.9647058823529412,
+        "roc_auc": 0.9901735997379627,
+        "pr_auc": 0.9884042365601713,
+        "brier": 0.03441491228070175,
+        "tn": 70,
+        "fp": 1,
+        "fn": 2,
+        "tp": 41,
+        "positive_rate": 0.37719298245614036
+      },
+      "test_metrics": {
+        "threshold": 0.625,
+        "n": 114,
+        "accuracy": 0.9473684210526315,
+        "precision": 1.0,
+        "recall": 0.8571428571428571,
+        "sensitivity": 0.8571428571428571,
+        "specificity": 1.0,
+        "f1": 0.9230769230769231,
+        "roc_auc": 0.9986772486772487,
+        "pr_auc": 0.9979296066252588,
+        "brier": 0.02745328947368421,
+        "tn": 72,
+        "fp": 0,
+        "fn": 6,
+        "tp": 36,
+        "positive_rate": 0.3684210526315789,
+        "roc_auc_ci95": [
+          0.9944827616243057,
+          1.0
+        ],
+        "pr_auc_ci95": [
+          0.9904513318967103,
+          1.0
+        ]
+      }
+    },
+    "xgboost": {
+      "display_name": "XGBoost",
+      "best_params": {
+        "model__subsample": 0.9,
+        "model__reg_lambda": 5.0,
+        "model__n_estimators": 600,
+        "model__max_depth": 6,
+        "model__learning_rate": 0.1,
+        "model__colsample_bytree": 1.0
+      },
+      "cv_score": 0.9924722719141326,
+      "cv_std": 0.010042943369912079,
+      "threshold": 0.5993,
+      "calibrated": false,
+      "validation_metrics": {
+        "threshold": 0.5993,
+        "n": 114,
+        "accuracy": 0.9824561403508771,
+        "precision": 0.9767441860465116,
+        "recall": 0.9767441860465116,
+        "sensitivity": 0.9767441860465116,
+        "specificity": 0.9859154929577465,
+        "f1": 0.9767441860465116,
+        "roc_auc": 0.9957418932197838,
+        "pr_auc": 0.9941681618263555,
+        "brier": 0.026539124959435865,
+        "tn": 70,
+        "fp": 1,
+        "fn": 1,
+        "tp": 42,
+        "positive_rate": 0.37719298245614036
+      },
+      "test_metrics": {
+        "threshold": 0.5993,
+        "n": 114,
+        "accuracy": 0.9736842105263158,
+        "precision": 1.0,
+        "recall": 0.9285714285714286,
+        "sensitivity": 0.9285714285714286,
+        "specificity": 1.0,
+        "f1": 0.9629629629629629,
+        "roc_auc": 0.9933862433862434,
+        "pr_auc": 0.9923195084485407,
+        "brier": 0.0171758132678117,
+        "tn": 72,
+        "fp": 0,
+        "fn": 3,
+        "tp": 39,
+        "positive_rate": 0.3684210526315789,
+        "roc_auc_ci95": [
+          0.9766842700069386,
+          1.0
+        ],
+        "pr_auc_ci95": [
+          0.9714974266458656,
+          1.0
+        ]
+      }
+    }
+  }
+}
