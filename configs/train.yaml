@@ -1,0 +1,17 @@
+# Training defaults. CLI flags override the values below.
+# Used by scripts/train.py via --config (optional).
+n_iter: 15          # RandomizedSearchCV candidates per model
+cv: 5               # CV folds for model selection
+seed: null          # null -> DP_RANDOM_SEED (default 42)
+threshold_objective: youden        # f1 | youden | sensitivity_at_specificity
+calibration_method: sigmoid        # sigmoid | isotonic | null
+models: null        # null -> all registered models
+
+# Per-task overrides (optional).
+per_task:
+  heart_disease:
+    n_iter: 20
+  diabetes:
+    n_iter: 20
+  breast_cancer:
+    n_iter: 10
