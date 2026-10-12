@@ -1,0 +1,291 @@
+{
+  "task": "heart_disease",
+  "champion": "logistic_regression",
+  "selection_metric": "roc_auc",
+  "rationale": "Selected `logistic_regression` by highest validation roc_auc. Selection used validation data only; the test set was not consulted. Runner-up was `svm` (\u0394roc_auc = 0.0065); the margin should be read alongside cross-validation variability. Dummy baseline roc_auc = 0.5000; champion = 0.9470.",
+  "split_sizes": {
+    "train": 181,
+    "validation": 61,
+    "test": 61
+  },
+  "random_seed": 42,
+  "models": {
+    "dummy": {
+      "display_name": "Dummy (prior) baseline",
+      "best_params": {},
+      "cv_score": null,
+      "cv_std": null,
+      "threshold": 0.5,
+      "calibrated": false,
+      "validation_metrics": {
+        "threshold": 0.5,
+        "n": 61,
+        "accuracy": 0.5409836065573771,
+        "precision": 0.0,
+        "recall": 0.0,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "f1": 0.0,
+        "roc_auc": 0.5,
+        "pr_auc": 0.49048137331592184,
+        "brier": 0.24832054907349346,
+        "tn": 33,
+        "fp": 0,
+        "fn": 28,
+        "tp": 0,
+        "positive_rate": 0.45901639344262296
+      },
+      "test_metrics": {
+        "threshold": 0.5,
+        "n": 61,
+        "accuracy": 0.5409836065573771,
+        "precision": 0.0,
+        "recall": 0.0,
+        "sensitivity": 0.0,
+        "specificity": 1.0,
+        "f1": 0.0,
+        "roc_auc": 0.5,
+        "pr_auc": 0.38613058759508323,
+        "brier": 0.2483205490734935,
+        "tn": 33,
+        "fp": 0,
+        "fn": 28,
+        "tp": 0,
+        "positive_rate": 0.45901639344262296,
+        "roc_auc_ci95": [
+          0.5,
+          0.5
+        ],
+        "pr_auc_ci95": [
+          0.33294876033934845,
+          0.6587772105721169
+        ]
+      }
+    },
+    "logistic_regression": {
+      "display_name": "Logistic Regression",
+      "best_params": {
+        "model__C": 1.0
+      },
+      "cv_score": 0.887294891640867,
+      "cv_std": 0.04693436419776806,
+      "threshold": 0.5495,
+      "calibrated": true,
+      "validation_metrics": {
+        "threshold": 0.5495,
+        "n": 61,
+        "accuracy": 0.8688524590163934,
+        "precision": 0.9166666666666666,
+        "recall": 0.7857142857142857,
+        "sensitivity": 0.7857142857142857,
+        "specificity": 0.9393939393939394,
+        "f1": 0.8461538461538461,
+        "roc_auc": 0.946969696969697,
+        "pr_auc": 0.9477297948144611,
+        "brier": 0.09115563011039336,
+        "tn": 31,
+        "fp": 2,
+        "fn": 6,
+        "tp": 22,
+        "positive_rate": 0.45901639344262296
+      },
+      "test_metrics": {
+        "threshold": 0.5495,
+        "n": 61,
+        "accuracy": 0.8852459016393442,
+        "precision": 0.8387096774193549,
+        "recall": 0.9285714285714286,
+        "sensitivity": 0.9285714285714286,
+        "specificity": 0.8484848484848485,
+        "f1": 0.8813559322033898,
+        "roc_auc": 0.9588744588744589,
+        "pr_auc": 0.9529999635725468,
+        "brier": 0.08420697716037195,
+        "tn": 28,
+        "fp": 5,
+        "fn": 2,
+        "tp": 26,
+        "positive_rate": 0.45901639344262296,
+        "roc_auc_ci95": [
+          0.9109831029185868,
+          0.9908557346543617
+        ],
+        "pr_auc_ci95": [
+          0.8856020500319356,
+          0.9906614882727868
+        ]
+      }
+    },
+    "svm": {
+      "display_name": "Support Vector Machine (RBF)",
+      "best_params": {
+        "model__estimator__gamma": 0.01,
+        "model__estimator__C": 10.0
+      },
+      "cv_score": 0.8903831269349844,
+      "cv_std": 0.04213117250765752,
+      "threshold": 0.6105,
+      "calibrated": false,
+      "validation_metrics": {
+        "threshold": 0.6105,
+        "n": 61,
+        "accuracy": 0.8852459016393442,
+        "precision": 0.9565217391304348,
+        "recall": 0.7857142857142857,
+        "sensitivity": 0.7857142857142857,
+        "specificity": 0.9696969696969697,
+        "f1": 0.8627450980392157,
+        "roc_auc": 0.9404761904761905,
+        "pr_auc": 0.9427939482175332,
+        "brier": 0.10708320599183895,
+        "tn": 32,
+        "fp": 1,
+        "fn": 6,
+        "tp": 22,
+        "positive_rate": 0.45901639344262296
+      },
+      "test_metrics": {
+        "threshold": 0.6105,
+        "n": 61,
+        "accuracy": 0.819672131147541,
+        "precision": 0.8148148148148148,
+        "recall": 0.7857142857142857,
+        "sensitivity": 0.7857142857142857,
+        "specificity": 0.8484848484848485,
+        "f1": 0.8,
+        "roc_auc": 0.9372294372294372,
+        "pr_auc": 0.9269486847777714,
+        "brier": 0.10444854938821657,
+        "tn": 28,
+        "fp": 5,
+        "fn": 6,
+        "tp": 22,
+        "positive_rate": 0.45901639344262296,
+        "roc_auc_ci95": [
+          0.873919591543514,
+          0.982573635514812
+        ],
+        "pr_auc_ci95": [
+          0.8349691662201753,
+          0.9825577867665172
+        ]
+      }
+    },
+    "random_forest": {
+      "display_name": "Random Forest",
+      "best_params": {
+        "model__n_estimators": 200,
+        "model__min_samples_leaf": 8,
+        "model__max_features": "log2",
+        "model__max_depth": 5
+      },
+      "cv_score": 0.8850019349845202,
+      "cv_std": 0.04181764808626161,
+      "threshold": 0.608,
+      "calibrated": false,
+      "validation_metrics": {
+        "threshold": 0.608,
+        "n": 61,
+        "accuracy": 0.8360655737704918,
+        "precision": 0.9090909090909091,
+        "recall": 0.7142857142857143,
+        "sensitivity": 0.7142857142857143,
+        "specificity": 0.9393939393939394,
+        "f1": 0.8,
+        "roc_auc": 0.9112554112554112,
+        "pr_auc": 0.9168499214535231,
+        "brier": 0.1333401305039619,
+        "tn": 31,
+        "fp": 2,
+        "fn": 8,
+        "tp": 20,
+        "positive_rate": 0.45901639344262296
+      },
+      "test_metrics": {
+        "threshold": 0.608,
+        "n": 61,
+        "accuracy": 0.8524590163934426,
+        "precision": 0.9130434782608695,
+        "recall": 0.75,
+        "sensitivity": 0.75,
+        "specificity": 0.9393939393939394,
+        "f1": 0.8235294117647058,
+        "roc_auc": 0.948051948051948,
+        "pr_auc": 0.934568781376035,
+        "brier": 0.12059945610650999,
+        "tn": 31,
+        "fp": 2,
+        "fn": 7,
+        "tp": 21,
+        "positive_rate": 0.45901639344262296,
+        "roc_auc_ci95": [
+          0.8866505376344086,
+          0.9913429243170622
+        ],
+        "pr_auc_ci95": [
+          0.8382838688862791,
+          0.9903949130907971
+        ]
+      }
+    },
+    "xgboost": {
+      "display_name": "XGBoost",
+      "best_params": {
+        "model__subsample": 0.7,
+        "model__reg_lambda": 2.0,
+        "model__n_estimators": 600,
+        "model__max_depth": 2,
+        "model__learning_rate": 0.01,
+        "model__colsample_bytree": 0.9
+      },
+      "cv_score": 0.872376160990712,
+      "cv_std": 0.04660137089486052,
+      "threshold": 0.6202,
+      "calibrated": false,
+      "validation_metrics": {
+        "threshold": 0.6202,
+        "n": 61,
+        "accuracy": 0.8852459016393442,
+        "precision": 1.0,
+        "recall": 0.75,
+        "sensitivity": 0.75,
+        "specificity": 1.0,
+        "f1": 0.8571428571428571,
+        "roc_auc": 0.9264069264069265,
+        "pr_auc": 0.9330370381390719,
+        "brier": 0.1117065544171804,
+        "tn": 33,
+        "fp": 0,
+        "fn": 7,
+        "tp": 21,
+        "positive_rate": 0.45901639344262296
+      },
+      "test_metrics": {
+        "threshold": 0.6202,
+        "n": 61,
+        "accuracy": 0.8852459016393442,
+        "precision": 0.8620689655172413,
+        "recall": 0.8928571428571429,
+        "sensitivity": 0.8928571428571429,
+        "specificity": 0.8787878787878788,
+        "f1": 0.8771929824561403,
+        "roc_auc": 0.9621212121212122,
+        "pr_auc": 0.9528354689141175,
+        "brier": 0.08895038038142385,
+        "tn": 29,
+        "fp": 4,
+        "fn": 3,
+        "tp": 25,
+        "positive_rate": 0.45901639344262296,
+        "roc_auc_ci95": [
+          0.9085987672547428,
+          0.9966688311688312
+        ],
+        "pr_auc_ci95": [
+          0.8757406849826926,
+          0.9964341678580866
+        ]
+      }
+    }
+  }
+}
